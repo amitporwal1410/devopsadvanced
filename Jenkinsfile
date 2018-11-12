@@ -11,8 +11,8 @@ node {
         sh 'echo $USER'
     }
     stage('Set Up GCloud') {
-        // sh 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
-        // sh 'curl https://sdk.cloud.google.com | bash > /dev/null;'
+        sh 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
+        sh 'curl https://sdk.cloud.google.com | bash > /dev/null;'
         sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud components update kubectl'
         sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file friendly-retina-208018-62ea382a3153.json'
         sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud config set project friendly-retina-208018'
