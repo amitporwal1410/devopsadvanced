@@ -20,7 +20,7 @@ node {
         sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud container clusters get-credentials devopsadvanced'
     } 
     stage('Build Docker'){
-        sh 'echo "mydockerpassword" | docker login -u "porwalamit" --password-stdin'
+        sh 'echo "" | docker login -u "porwalamit" --password-stdin'
         sh 'docker build -t porwalamit/devopsadvanced .'
         sh 'docker build -t porwalamit/devopsadvancedredis -f Dockerfile.redis .'
     }
